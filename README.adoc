@@ -1,0 +1,1 @@
+=HiveMQ Amazon Kinesis Extension Customization SDK
