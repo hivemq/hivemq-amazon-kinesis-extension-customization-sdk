@@ -1,1 +1,44 @@
-=HiveMQ Amazon Kinesis Extension Customization SDK
+= HiveMQ Amazon Kinesis Extension Customization SDK
+
+image:https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-amazon-kinesis-extension-customization-sdk/badge.svg?style=for-the-badge["Maven Central",link="https://maven-badges.herokuapp.com/maven-central/com.hivemq/hivemq-amazon-kinesis-extension-customization-sdk"]
+image:https://javadoc.io/badge2/com.hivemq/hivemq-amazon-kinesis-extension-customization-sdk/javadoc.svg?style=for-the-badge["javadoc",link=https://javadoc.io/doc/com.hivemq/hivemq-amazon-kinesis-extension-customization-sdk]
+
+== Features
+
+The HiveMQ Amazon Kinesis Extension Customization SDK allows the programmatic interaction with the https://www.hivemq.com/extension/hivemq-amazon-kinesis-extension/[HiveMQ Enterprise Extension for Amazon Kinesis].
+
+By implementing a customization for the HiveMQ Enterprise Extension for Amazon Kinesis it is possible to:
+
+* Convert a MQTT PUBLISH into one or more Amazon Kinesis records.
+* Dismiss particular MQTT PUBLISHES from being converted into Amazon Kinesis records.
+* Convert an Amazon Kinesis record into one or more MQTT PUBLISHES.
+* Dismiss particular Amazon Kinesis records from being converted into MQTT PUBLISHES.
+
+== Using the SDK
+
+To use the SDK, add the following dependency to your project:
+
+Maven
+
+[source,xml]
+----
+<dependency>
+    <groupId>com.hivemq</groupId>
+    <artifactId>hivemq-amazon-kinesis-extension-customization-sdk</artifactId>
+    <version>4.14.0</version>
+</dependency>
+----
+
+Gradle
+
+[source,groovy]
+----
+implementation("com.hivemq:hivemq-amazon-kinesis-extension-customization-sdk:4.14.0")
+----
+
+NOTE: The HiveMQ Amazon Kinesis Extension Customization SDK is available in Maven central, so no special configuration is needed.
+
+== License
+
+The HiveMQ Amazon Kinesis Extension SDK is licensed under the `APACHE LICENSE, VERSION 2.0`.
+A copy of the license can be found link:LICENSE[here].
