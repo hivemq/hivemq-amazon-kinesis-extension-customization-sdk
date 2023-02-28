@@ -16,24 +16,35 @@
 
 package com.hivemq.extensions.amazon.kinesis.api.transformers;
 
+import com.codahale.metrics.MetricRegistry;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
+import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
+import com.hivemq.extensions.amazon.kinesis.api.model.CustomSettings;
 
 /**
- * This is the base interface for all HiveMQ Enterprise Extension for Amazon Kinesis transformers.
+ * The general interface for the input objects.
  *
  * @author Mario Schwede
  * @since 4.14.0
  */
+@Immutable
 @DoNotImplement
-public interface Transformer<I extends TransformerInitInput> {
+public interface TransformerInput {
 
     /**
-     * Use the init method to initialize the transformer.
+     * Get the {@link MetricRegistry} of this HiveMQ node. It is possible to add own metrics to monitor custom business
+     * logic.
      *
-     * @param transformerInitInput See the specific transformerInitInput
+     * @return The {@link MetricRegistry} of the HiveMQ node this "Enterprise Extension for Amazon Kinesis" is
+     *         running on.
      * @since 4.14.0
      */
-    default void init(final @NotNull I transformerInitInput) {
-    }
+    @NotNull MetricRegistry getMetricRegistry();
+
+    /**
+     * @return The {@link CustomSettings} this transformer is associated with.
+     * @since 4.14.0
+     */
+    @NotNull CustomSettings getCustomSettings();
 }

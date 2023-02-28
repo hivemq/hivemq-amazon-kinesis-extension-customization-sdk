@@ -14,37 +14,42 @@
  * limitations under the License.
  */
 
-package com.hivemq.extensions.amazon.kinesis.api.transformers;
+package com.hivemq.extensions.amazon.kinesis.api.model;
 
-import com.codahale.metrics.MetricRegistry;
 import com.hivemq.extension.sdk.api.annotations.DoNotImplement;
 import com.hivemq.extension.sdk.api.annotations.Immutable;
 import com.hivemq.extension.sdk.api.annotations.NotNull;
-import com.hivemq.extensions.amazon.kinesis.api.model.CustomSettings;
+
+import java.time.Instant;
 
 /**
- * A marker interface for the input object of the {@link Transformer#init(TransformerInitInput)} method.
+ * Represents an inbound Amazon Kinesis record that was read from Kinesis.
+ * <p>
+ * The internal state of this interface is immutable.
  *
  * @author Mario Schwede
  * @since 4.14.0
  */
 @Immutable
 @DoNotImplement
-public interface TransformerInitInput {
+public interface InboundKinesisRecord extends KinesisRecord {
 
     /**
-     * Get the {@link MetricRegistry} of this HiveMQ node. It is possible to add own metrics to monitor custom business
-     * logic.
-     *
-     * @return The {@link MetricRegistry} of the HiveMQ node this "Enterprise Extension for Amazon Kinesis" is
-     *         running on.
+     * @return The unique identifier of the record within its shard.
      * @since 4.14.0
      */
-    @NotNull MetricRegistry getMetricRegistry();
+    @NotNull String getSequenceNumber();
 
     /**
-     * @return The {@link CustomSettings} this transformer is associated with.
+     * @return The approximate time that the record was inserted into the stream.
      * @since 4.14.0
      */
-    @NotNull CustomSettings getCustomSettings();
+    @NotNull Instant getApproximateArrivalTimestamp();
+
+    /**
+     * @return The encryption type used on the record. Currently, known values are {@code NONE} (no encryption) and
+     *         {@code KMS} (server-side encryption by a KMS key).
+     * @since 4.14.0
+     */
+    @NotNull String getEncryptionType();
 }
