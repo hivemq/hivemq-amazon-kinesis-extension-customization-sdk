@@ -27,9 +27,9 @@ import com.hivemq.extensions.amazon.kinesis.api.model.InboundKinesisRecord;
  * instance of the implementing class is created per reference in the amazon-kinesis-configuration.xml. The methods
  * of this interface may be called concurrently and must be thread-safe.
  * <p>
- * Your implementation of the KinesisToMqttTransformer must be placed in a Java archive (.jar) together with all its
- * dependencies in the {@code customizations} folder of the "HiveMQ Enterprise Extension for Amazon Kinesis". In
- * addition, a {@code <kinesis-to-mqtt-transformer>} referencing the implementing class via its canonical name must be
+ * Your implementation of the {@link KinesisToMqttTransformer} must be placed in a Java archive (.jar) together with all
+ * its dependencies in the {@code customizations} folder of the "HiveMQ Enterprise Extension for Amazon Kinesis". In
+ * addition, a {@code <transformer>} referencing the implementing class via its canonical name must be
  * configured in the {@code amazon-kinesis-configuration.xml} file.
  *
  * @author Mario Schwede
@@ -49,9 +49,8 @@ public interface KinesisToMqttTransformer {
 
     /**
      * This callback is executed for every {@link InboundKinesisRecord} that the "HiveMQ Enterprise Extension for
-     * Amazon
-     * Kinesis" polls from Amazon Kinesis according to the configured {@code <kinesis-consumers>}
-     * in the {@code <kinesis-to-mqtt-transformer>} tag. It allows the publication of any number of
+     * Amazon Kinesis" polls from Amazon Kinesis according to the configured {@code <kinesis-streams>}
+     * in the {@code <kinesis-to-mqtt-route>} tag. It allows the publication of any number of
      * {@link Publish}es via the {@link KinesisToMqttOutput}
      * object. This method is called by multiple threads concurrently. Extensions are responsible for their own
      * exception handling and this method must not throw any {@link Exception}.

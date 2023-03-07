@@ -25,9 +25,9 @@ import java.util.List;
  * Implement this transformer for the programmatic creation of {@link OutboundKinesisRecord}s from
  * {@link com.hivemq.extension.sdk.api.packets.publish.PublishPacket}s.
  * <p>
- * Your implementation of the MqttToKinesisTransformer must be placed in a java archive (.jar) together with all its
- * dependencies in the {@code customizations} folder of the HiveMQ Enterprise Extension for Amazon Kinesis. In addition,
- * a {@code <mqtt-to-kinesis-transformer>} referencing the implementing class via its canonical name must be configured
+ * Your implementation of the {@link MqttToKinesisTransformer} must be placed in a java archive (.jar) together with all
+ * its dependencies in the {@code customizations} folder of the "HiveMQ Enterprise Extension for Amazon Kinesis". In
+ * addition, a {@code <transformer>} referencing the implementing class via its canonical name must be configured
  * in the {@code amazon-kinesis-configuration.xml} file.
  *
  * @author Mario Schwede
