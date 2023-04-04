@@ -145,7 +145,7 @@ public interface OutboundKinesisRecordBuilder {
      * @param explicitHashKey The explicitHashKey.
      * @return This builder.
      * @throws NullPointerException     If {@code explicitHashKey} is null.
-     * @throws IllegalArgumentException If {@code partitionKey} < 0 or >= 2^128.
+     * @throws IllegalArgumentException If {@code partitionKey < 0 or >= 2^128}.
      * @since 4.14.0
      */
     @NotNull OutboundKinesisRecordBuilder explicitHashKey(@NotNull BigInteger explicitHashKey);
