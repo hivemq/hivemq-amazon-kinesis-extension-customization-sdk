@@ -65,7 +65,7 @@ repositories {
 }
 
 dependencies {
-    api(libs.hivemq.extensionSdk)
+    api("com.hivemq:hivemq-extension-sdk:${version}")
     api(libs.slf4j.api)
 }
 
@@ -81,9 +81,9 @@ java {
 
 tasks.withType<Jar>().configureEach {
     manifest.attributes(
-        "Implementation-Title" to project.name,
-        "Implementation-Vendor" to metadata.organization.get().name.get(),
-        "Implementation-Version" to project.version
+            "Implementation-Title" to project.name,
+            "Implementation-Vendor" to metadata.organization.get().name.get(),
+            "Implementation-Version" to project.version
     )
 }
 
