@@ -52,8 +52,6 @@ metadata {
         }
     }
     github {
-        org.set("hivemq")
-        repo.set("hivemq-amazon-kinesis-extension-customization-sdk")
         issues()
     }
 }
