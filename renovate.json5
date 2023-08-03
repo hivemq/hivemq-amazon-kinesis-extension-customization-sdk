@@ -5,7 +5,7 @@
     ],
     baseBranches: [
         "master",
-        //    "renovate-playground"
+        "renovate-playground"
     ],
     "useBaseBranchConfig": "merge"
 }
