@@ -8,5 +8,5 @@
         "renovate-playground"
     ],
     "useBaseBranchConfig": "merge",
-    "branchPrefix": "renovate/hmqaksdk_"
+    "branchPrefix": "renovate/hivemq-amazon-kinesis-extension-customization-sdk/"
 }
