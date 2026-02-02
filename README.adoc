@@ -25,7 +25,7 @@ Maven
 <dependency>
     <groupId>com.hivemq</groupId>
     <artifactId>hivemq-amazon-kinesis-extension-customization-sdk</artifactId>
-    <version>4.48.0</version>
+    <version>4.48.1</version>
 </dependency>
 ----
 
@@ -33,7 +33,7 @@ Gradle
 
 [source,groovy]
 ----
-implementation("com.hivemq:hivemq-amazon-kinesis-extension-customization-sdk:4.48.0")
+implementation("com.hivemq:hivemq-amazon-kinesis-extension-customization-sdk:4.48.1")
 ----
 
 NOTE: The HiveMQ Amazon Kinesis Extension Customization SDK is available in Maven central, so no special configuration is needed.
